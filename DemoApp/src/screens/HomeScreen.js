@@ -1,15 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import MyButton from './src/components/MyButton';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import MyButton from '../components/MyButton';
 
-export default function HomeScreen() {
+export default function HomeScreen( { navigation, route }) {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Welcome to my Demo App!</Text>
       <Text style={styles.text}>This is a demo app for CFG mobile app course</Text>
-      <Text style={styles.text}>Hello Humans!</Text>
-
-      <MyButton title='Click Me'/>
+      <Text style={styles.text}>Hello {route.params.user}</Text>
+      <Button title="View Screen Page" onPress={() =>
+          navigation.navigate('View')
+        }/>
+      {/* <MyButton title='Click Me'/> */}
       <StatusBar style="auto" />
     </View>
   );
