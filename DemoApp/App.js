@@ -13,7 +13,8 @@ export default function App() {
       <Stack.Navigator initialRouteName='Log In'>
         <Stack.Screen 
             name="Log In" 
-            component={ LogInScreen }/>
+            component={ LogInScreen }
+            options={{title: ''}}/>
           <Stack.Screen 
             name="Tabs" 
             component={ Tabs }
