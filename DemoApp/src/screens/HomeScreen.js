@@ -7,7 +7,7 @@ export default function HomeScreen( { navigation, route }) {
     <View style={styles.container}>
       <Text style={styles.heading}>Welcome to my Demo App!</Text>
       <Text style={styles.text}>This is a demo app for CFG mobile app course</Text>
-      <Text style={styles.text}>Hello {route.params.user}</Text>
+      {/* <Text style={styles.text}>Hello {route.params.user}</Text> */}
       <Button title="View Screen Page" onPress={() =>
           navigation.navigate('View')
         }/>
