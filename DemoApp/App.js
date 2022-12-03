@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { View } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 import ViewScreen from './src/screens/ViewScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
@@ -12,7 +13,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='View'>
+      <Stack.Navigator initialRouteName='Profile'>
         <Stack.Screen 
         name="Home" 
         component={ HomeScreen }
@@ -20,12 +21,10 @@ export default function App() {
         <Stack.Screen 
         name="View" 
         component={ ViewScreen }/>
-
+        <Stack.Screen 
+        name='Profile'
+        component={ ProfileScreen }/>
       </Stack.Navigator>
-       {/* <View> */}
-    {/* <HomeScreen/> */}
-    {/* <ViewScreen/> */}
-    {/* </View> */}
      </NavigationContainer>
    
     
