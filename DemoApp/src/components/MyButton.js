@@ -1,6 +1,3 @@
-
-import { StatusBar } from 'expo-status-bar';
-// import { Button } from 'react-native';
 import { TouchableOpacity, StyleSheet, Text } from 'react-native';
 
 
