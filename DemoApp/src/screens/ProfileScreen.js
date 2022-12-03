@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 import { Card, Avatar, ListItem, Divider } from '@rneui/themed';
 
