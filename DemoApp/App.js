@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 import ViewScreen from './src/screens/ViewScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
+import LogInScreen from './src/screens/LogInScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
@@ -13,7 +14,10 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Profile'>
+      <Stack.Navigator initialRouteName='Log In'>
+      <Stack.Screen 
+        name="Log In" 
+        component={ LogInScreen }/>
         <Stack.Screen 
         name="Home" 
         component={ HomeScreen }
