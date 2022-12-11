@@ -23,7 +23,7 @@ export default function RegisterScreen( { navigation, route }) {
 
   return (
     <View style={styles.bigContainer}>
-       <Text style={styles.text}>Hi,{"\n"}This is a Demo App.{"\n"}Click the Log In button to view the next screen</Text>
+       <Text style={styles.text}>Hi,{"\n"}This is a Demo App.{"\n"}Enter a username and password to register</Text>
         <Input 
             placeholder="Username"
             leftIcon={{ type: 'simple-line-icon', name: 'user' }}
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     color: '#344648',
-    alignItems: 'center',
+    textAlign: 'center',
     justifyContent: 'center',
     marginLeft: 20
   },
