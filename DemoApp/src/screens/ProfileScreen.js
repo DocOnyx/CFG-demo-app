@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 import { Card, Avatar, ListItem, Divider } from '@rneui/themed';
+import { useSelector } from 'react-redux';
 
 export default function ProfileScreen( { navigation, route }) {
   const profileItems = ['Pitches', 'Trips', 'Likes', 'Appointments', 'Updates', 'Photos', 'Setting']
   
+  const user = useSelector((state) => state.logged_in_user);
   return (
     <View style={styles.bigContainer}>
         <View style={styles.cardContainer}>
@@ -12,7 +14,7 @@ export default function ProfileScreen( { navigation, route }) {
             <Card.Divider />
 
               <View style={{alignItems:"center"}}>
-                <Text style={styles.text}>This is my profile</Text>
+                <Text style={styles.text}>This is {user}'s profile</Text>
               </View>
             </Card>
             <Avatar
