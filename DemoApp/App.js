@@ -8,8 +8,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { userReducer } from './src/redux/reducers';
 import { state} from './src/redux/store';
-import { Button } from 'react-native';
-import { useDispatch } from 'react-redux';
+import LogOutButton from './src/components/LogOut';
 
 
 const Stack = createNativeStackNavigator();
@@ -18,32 +17,12 @@ const Stack = createNativeStackNavigator();
 
 
 export default function App(){
+
   const store = createStore(userReducer, state)
+  
 
   return (
     <Provider store={store}> 
-      <AppWrapper />
-    </Provider>
-  )
-}
-
-
-function AppWrapper() {
-
-  const dispatch = useDispatch();
-
-  function logOutUser(){
-    const action = {
-      type: 'LOG_OUT',
-      payload: ''
-    }
-    console.log('Logging out user ...')
-    dispatch(action)
-  }
-
-
-  return (
-   
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Log In'>
         <Stack.Screen 
@@ -56,14 +35,8 @@ function AppWrapper() {
             options={({ navigation }) => ({
               title: '',
               headerLeft: () => (
-              <Button
-                onPress={() => {
-                  logOutUser();
-                  navigation.goBack();
-                }}
-                title="Log Out"
-                color="red"
-              />)})}
+                <LogOutButton navigation={navigation}/>)
+              })}
         />
         <Stack.Screen 
             name="Register" 
@@ -71,7 +44,7 @@ function AppWrapper() {
             options={{title: '', headerBackVisible: false}}/>
       </Stack.Navigator>
      </NavigationContainer>
-    
+    </Provider>
   );
 }
 
